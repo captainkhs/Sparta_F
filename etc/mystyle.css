@@ -1,0 +1,21 @@
+* {
+    font-family: 'Yeon Sung', cursive;
+}
+
+.wrap {
+    margin: 10px auto;
+    width: 300px;
+}
+
+.mytitle {
+    background-image: url(https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 250px;
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+    border-radius: 10px;
+}
+

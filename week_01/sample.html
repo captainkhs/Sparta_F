@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+​
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
+    rel="stylesheet"
+  />
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <title>1주차_과제</title>
+    <style>
+      .wrap {
+        width: 500px;
+        margin-top: 100px;
+        margin-left: 500px;
+        font-family: "Gamja Flower", cursive;
+        
+      
+      }
+      .title {
+        background-image: url("https://cdn.britannica.com/99/143599-050-C3289491/Watermelon.jpg");
+        width: 500px;
+        height: 300px;
+​
+        padding-top: 40px;
+        background-position: center;
+       
+      }
+      .t1 {
+        font-size: 10px;
+        color: black;
+      }
+      .btn1 {
+        margin: auto;
+        text-align: center;
+        border-radius: 4px;
+      }
+      .name {
+        font-size: 30px;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+        function order(){
+            alert('주문이 완료되었습니다.');
+        }
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title"> </div>
+      <a class="name">수박을 팝니다.</a>
+      <a>가격: 3,000원/개</a>
+      <p>
+        산지직송 당일재배! 당도가 높은 수박. 하나 사가세요! 
+      </p>
+      <div>
+        <div class="form-row align-items-center"></div>
+          <div class="col-auto"></div>
+            <class class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">주문자 이름</div>
+              </div>
+              <input
+                  type="text"
+                  class="form-control"
+                  id="inlineFormInputGroup"
+                />
+          </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">수량</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>-- 수량을 선택하세요 --</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div>
+      <div class="form-row align-items-center"></div>
+        <div class="col-auto"></div>
+          <class class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">주소</div>
+            </div>
+            <input
+                type="text"
+                class="form-control"
+                id="inlineFormInputGroup"
+              />
+        </div>
+        <div>
+            <div class="form-row align-items-center"></div>
+              <div class="col-auto"></div>
+                <class class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">전화번호</div>
+                  </div>
+                  <input
+                      type="text"
+                      class="form-control"
+                      id="inlineFormInputGroup"
+                    />
+              </div>
+            
+      <div class="btn1">
+        <button onclick="order()" type="button" class="btn btn-primary">주문하기</button>
+      </div>
+    </div>
+    </class>
+  </body>
+</html>

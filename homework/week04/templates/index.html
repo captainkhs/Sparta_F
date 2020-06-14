@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Song+Myung&display=swap" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Song+Myung&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- JQuery를 import 합니다 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>스파르타코딩클럽 | Week04 과제</title>
+    <style>
+        .title {
+            margin: auto;
+            background-image: url(https://www.mobileautomation.com.au/wp-content/uploads/2017/02/UR10_Left-768x878.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            color: white;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        .wrap {
+            width: 800px;
+            margin: 10px auto;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .wrap2 {
+            width: 400px;
+            margin: 10px auto;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        body {
+            font-family: 'Song Myung', serif;
+        }
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+            listing()
+
+        });
+
+        function listing() {
+            $.ajax({
+                type: "GET",
+                url: "https://api.manana.kr/exchange/rate.json",
+                data: {},
+                success: function (response) {
+                    let usrate = "달러-원 환율 : " + response[1]['rate'];
+                    $('#rates').html(usrate);
+                }
+            })
+
+        }
+
+        function order() {
+            let name = $('#username').val();
+            let quantitys = $('#quantity').val();
+            let addr = $('#address').val();
+            let phone = $('#phonenumber').val();
+            if ('' == name) {
+                alert('이름을 입력하세요');
+            } else if ('' == quantitys) {
+                alert('수량을 입력하세요');
+            } else if ('' == addr) {
+                alert('주소를 입력하세요');
+            } else if ('' == phone) {
+                alert('전화번호를 입력하세요');
+            } else {
+                alert('주문이 완료되었습니다.');
+            }
+
+        }
+
+        $(function () {
+
+            $(".phone-number-check").on('keydown', function (e) {
+                // 숫자만 입력받기
+                var trans_num = $(this).val().replace(/-/gi, '');
+                var k = e.keyCode;
+
+                if (trans_num.length >= 11 && ((k >= 48 && k <= 126) || (k >= 12592 && k <= 12687 || k == 32 || k == 229 || (k >= 45032 && k <= 55203)))) {
+                    e.preventDefault();
+                }
+            }).on('blur', function () { // 포커스를 잃었을때 실행합니다.
+                if ($(this).val() == '') return;
+
+                // 기존 번호에서 - 를 삭제합니다.
+                var trans_num = $(this).val().replace(/-/gi, '');
+
+                // 입력값이 있을때만 실행합니다.
+                if (trans_num != null && trans_num != '') {
+                    // 총 핸드폰 자리수는 11글자이거나, 10자여야 합니다.
+                    if (trans_num.length == 11 || trans_num.length == 10) {
+                        // 유효성 체크
+                        var regExp_ctn = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})([0-9]{3,4})([0-9]{4})$/;
+                        if (regExp_ctn.test(trans_num)) {
+                            // 유효성 체크에 성공하면 하이픈을 넣고 값을 바꿔줍니다.
+                            trans_num = trans_num.replace(/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?([0-9]{3,4})-?([0-9]{4})$/, "$1-$2-$3");
+                            $(this).val(trans_num);
+                        }
+                        else {
+                            alert("유효하지 않은 전화번호 입니다.");
+                            $(this).val("");
+                            $(this).focus();
+                        }
+                    }
+                    else {
+                        alert("유효하지 않은 전화번호 입니다.");
+                        $(this).val("");
+                        $(this).focus();
+                    }
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div class="title">
+    </div>
+
+    <div class="wrap">
+        <div>
+
+            <a class="name">Universal Robot </a>
+            <a>$50,000/대</a>
+            <div class="exec" id="rates" style="color:rgb(8, 31, 241)"> </div>
+            <h1> "완벽한 로봇 맞춤화 솔루션"</h1>
+            <p>UR16e 를 사용하여 고 중량 소재 핸들링 및 CNC 머신 텐딩 어플리케이션을 높은 정밀도로 자동화할 수 있습니다.</p>
+            <p> 16kg 의 페이로드를 자랑하는 UR16e 는 무거운 제품을 핸들링할 때 발생하는 위험 및 시스템 중단을 줄이는 데 도움을 줍니다.</p>
+            <p>작은 설치 면적과 작동 반경 900 mm 로 비좁은 공간에서 사용하기에 이상적이며 견고한 작동이 가능합니다.</p>
+            <p>한공장 전체에서 동시에 서로 다른 작업을 수행하도록 여러 대의 로봇을 배치하여 생산성을 높일 수 있습니다.</p>
+            UR 16 e 로봇은 과거에는 자동화할 수 없었던 작업을 포함한 다양한 작업을 수행하며 한 제조 라인 또는</p>
+            작업 셀에서 다른 제조 라인또는 작업 셀로 쉽게 전개할 수 있습니다.
+        </div>
+    </div>
+
+    <div class="wrap2">
+        <p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">주문자 이름</span>
+            </div>
+            <input type="text" class="form-control" id="username" aria-describedby="basic-addon3">
+        </div>
+        </p>
+        <p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">수량</label>
+            </div>
+            <select class="custom-select" id="quantity">
+                <option selected value>--수량을 선택하세요--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">대량주문은 별도로 연락 주세요</option>
+            </select>
+        </div>
+        </p>
+        <p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">주소</span>
+            </div>
+            <input type="text" class="form-control" id="address" aria-describedby="basic-addon3">
+        </div>
+        </p>
+        <p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">전화번호</span>
+            </div>
+            <input type="phone" class="form-control" id="phonenumber" aria-describedby="basic-addon3"placeholder="번호만 입력하세요">
+            <!-- <input type="phone" class="form-control" id="phonenumber" aria-describedby="basic-addon3" placeholder="번호만 입력하세요"> -->
+            <!-- <input type="text" class="form-control" id="phonenumber" aria-describedby="basic-addon3"> -->
+        </div>
+        </p>
+
+    </div>
+    <div class="wrap">
+        <p>
+            <button onclick="order()" type="button" class="btn btn-primary">주문하기</button>
+        </p>
+    </div>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Song+Myung&display=swap" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Song+Myung&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>스파르타코딩클럽 | Week01 과제</title>
+    <style>
+        .title {
+            margin: auto;
+            background-image: url(https://www.mobileautomation.com.au/wp-content/uploads/2017/02/UR10_Left-768x878.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            color: white;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        ​ .wrap {
+            width: 800px;
+            margin: 10px auto;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        ​ .wrap2 {
+            width: 400px;
+            margin: 10px auto;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        ​ .name {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        ​ body {
+            font-family: 'Song Myung', serif;
+        }
+    </style>
+    <script>
+        function order() {
+            alert('주문이 완료되었습니다.');
+        }
+    </script>
+    ​
+</head>
+​
+
+<body>
+    <div class="title">
+    </div><div class="wrap">
+        <div>
+            <p>
+                <a class="name">Universal Robot </a>
+                <a>$50,000/대</a></p>
+            <h1> "완벽한 로봇 맞춤화 솔루션"</h1>
+            <p>UR16e 를 사용하여 고 중량 소재 핸들링 및 CNC 머신 텐딩 어플리케이션을 높은 정밀도로 자동화할 수 있습니다.</p>
+            <p> 16kg 의 페이로드를 자랑하는 UR16e 는 무거운 제품을 핸들링할 때 발생하는 위험 및 시스템 중단을 줄이는 데 도움을 줍니다.</p>
+            <p>작은 설치 면적과 작동 반경 900 mm 로 비좁은 공간에서 사용하기에 이상적이며 견고한 작동이 가능합니다.</p>
+            <p>한공장 전체에서 동시에 서로 다른 작업을 수행하도록 여러 대의 로봇을 배치하여 생산성을 높일 수 있습니다.</p>
+            UR 16 e 로봇은 과거에는 자동화할 수 없었던 작업을 포함한 다양한 작업을 수행하며 한 제조 라인 또는</p>
+            작업 셀에서 다른 제조 라인또는 작업 셀로 쉽게 전개할 수 있습니다.
+        </div>
+    </div>
+    <div class="wrap2">
+        <p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">주문자 이름</span>
+            </div>
+            <input type="text" class="form-control" id="username" aria-describedby="basic-addon3">
+        </div>
+        </p>
+        <p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">수량</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>--수량을 선택하세요--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">대량주문은 별도로 연락 주세요</option>
+            </select>
+        </div>
+        </p>
+        <p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">주소</span>
+            </div>
+            <input type="text" class="form-control" id="address" aria-described2by="basic-addon3">
+        </div>
+        </p>
+        <p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">전화번호</span>
+            </div>
+            <input type="text" class="form-control" id="phonenumber" aria-describedby="basic-addon3">
+        </div>
+        </p>
+        ​
+    </div>
+    <div class="wrap">
+        <p>
+            <button onclick="order()" type="button" class="btn btn-primary">주문하기</button>
+        </p>
+    </div>​
+
+    ​
+</body>
+​
+
+</html>
